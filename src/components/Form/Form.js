@@ -13,7 +13,7 @@ const Form = () => {
 
     const contact = {
       name: e.target.name.value,
-      phone: e.target.number.value,
+      number: e.target.number.value,
     };
 
     if (contacts.find(contact => contact.name === e.target.name.value)) {

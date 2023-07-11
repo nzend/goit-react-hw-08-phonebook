@@ -1,14 +1,17 @@
+import { useDispatch } from 'react-redux';
 import css from '../register/register.module.css';
 import { useState } from 'react';
+import { login } from '../../redux/auth/auth-operations';
 
 const Login = () => {
-  const [name, setName] = useState('');
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
-      case 'name':
-        return setName(value);
+      case 'email':
+        return setEmail(value);
 
       case 'password':
         return setPassword(value);
@@ -19,21 +22,20 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    setName('');
-
+    dispatch(login({ email: email, password: password }));
+    setEmail('');
     setPassword('');
   };
   return (
     <div className={css.form__container}>
-      <form autoComplete="off" className={css.form}>
+      <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
         <label className={css.form__label}>
-          Ім'я
+          Пошта
           <input
             className={css.form__input}
-            type="text"
-            name="name"
-            value={name}
+            type="email"
+            name="email"
+            value={email}
             onChange={handleChange}
           ></input>
         </label>
@@ -48,11 +50,7 @@ const Login = () => {
             onChange={handleChange}
           ></input>
         </label>
-        <button
-          type="submit"
-          className={css.register__btn}
-          onSubmit={handleSubmit}
-        >
+        <button type="submit" className={css.register__btn}>
           Увійти
         </button>
       </form>
