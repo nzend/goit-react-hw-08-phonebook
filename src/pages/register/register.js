@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import css from "./register.module.css";
+import css from './register.module.css';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/auth-operations';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -21,7 +25,7 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    dispatch(register({ name: name, email: email, password: password }));
     setName('');
     setEmail('');
     setPassword('');
@@ -29,7 +33,7 @@ const Register = () => {
 
   return (
     <div className={css.form__container}>
-      <form autoComplete="off" className={css.form}>
+      <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
         <label className={css.form__label}>
           Ім'я
           <input
@@ -60,7 +64,7 @@ const Register = () => {
             onChange={handleChange}
           ></input>
         </label>
-        <button type="submit" className={css.register__btn} onSubmit={handleSubmit}>
+        <button type="submit" className={css.register__btn}>
           Зареєструватися
         </button>
       </form>
