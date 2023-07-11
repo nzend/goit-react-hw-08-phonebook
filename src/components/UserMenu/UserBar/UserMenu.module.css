@@ -1,6 +1,7 @@
 .user__menu {
   display: flex;
   align-items: center;
+  margin-right: 18px;
 }
 .user__email {
   color: white;
