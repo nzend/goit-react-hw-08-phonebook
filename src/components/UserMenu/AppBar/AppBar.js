@@ -1,5 +1,5 @@
 import css from './AppBar.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import authSelectors from '../../../redux/auth/auth-selectors';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
@@ -9,7 +9,7 @@ import AuthMenu from '../AuthMenu/AuthMenu';
 import Navigation from '../Navigation/Navigation';
 
 const AppBar = () => {
-  const dispatch = useDispatch();
+
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
     <div className={css.container}>
