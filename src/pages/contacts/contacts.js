@@ -1,12 +1,11 @@
 import css from './contacts.module.css';
 
-
 import { useEffect } from 'react';
 
 import { Filter } from '../../components/Filter/Filter';
 import Loader from '../../components/Loader/Loader';
 import { ContactsList } from '../../components/ContactsList/ContactsList';
-import  Form  from '../../components/Form/Form';
+import Form from '../../components/Form/Form';
 
 import { fetchContacts } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';

@@ -30,7 +30,7 @@ const Login = () => {
     <div className={css.form__container}>
       <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
         <label className={css.form__label}>
-          Пошта
+          Email
           <input
             className={css.form__input}
             type="email"
@@ -41,7 +41,7 @@ const Login = () => {
         </label>
 
         <label className={css.form__label}>
-          Пароль
+          Password
           <input
             className={css.form__input}
             type="password"
@@ -51,7 +51,7 @@ const Login = () => {
           ></input>
         </label>
         <button type="submit" className={css.register__btn}>
-          Увійти
+          LogIn
         </button>
       </form>
     </div>

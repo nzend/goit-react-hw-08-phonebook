@@ -23,11 +23,17 @@
   color: #111111;
   cursor: pointer;
 }
+.deleteBtn:hover {
+  background: linear-gradient(141.22deg, #cb4e13 9.4%, #dcb311 91.91%);
+  color: white;
+}
 
 .contactName {
+  color: white;
   font-weight: 500;
   font-size: 18px;
 }
 .contactNumber {
+  color: white;
   margin-left: 8px;
 }

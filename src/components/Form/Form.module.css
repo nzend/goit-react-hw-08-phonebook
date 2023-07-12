@@ -4,13 +4,15 @@
   margin-bottom: 30px;
 }
 
-
 .formLabel {
+  color: white;
   font-weight: 500;
   margin-bottom: 30px;
 }
 
 .formInput {
+  color: white;
+  background-color: inherit;
   padding: 10px 25px;
   font-size: 18px;
   display: block;
@@ -21,6 +23,9 @@
   margin-top: 12px;
   margin-left: auto;
   margin-right: auto;
+}
+.formInput::placeholder {
+  color: white;
 }
 .addBtn {
   display: block;
@@ -33,4 +38,9 @@
   border-radius: 74px;
   color: #111111;
   cursor: pointer;
+}
+
+.addBtn:hover {
+  background: linear-gradient(141.22deg, #cb4e13 9.4%, #dcb311 91.91%);
+  color: white;
 }

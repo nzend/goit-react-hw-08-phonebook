@@ -18,7 +18,7 @@ import Loader from 'components/Loader/Loader';
 const App = () => {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(authSelectors.getIsRefreshing);
-  console.log(isRefreshing);
+  
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
