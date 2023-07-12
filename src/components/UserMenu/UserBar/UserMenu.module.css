@@ -5,7 +5,7 @@
 }
 .user__email {
   color: white;
-  margin-right: 4px;
+  margin-right: 14px;
 }
 
 .logout__btn {
@@ -13,6 +13,7 @@
   padding: 8px 6px;
   border: 0;
   border-radius: 15px;
+  min-width: 80px;
 
   background-size: 40%;
   background-repeat: no-repeat;

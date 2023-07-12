@@ -35,7 +35,7 @@ const Register = () => {
     <div className={css.form__container}>
       <form autoComplete="off" className={css.form} onSubmit={handleSubmit}>
         <label className={css.form__label}>
-          Ім'я
+          Name
           <input
             className={css.form__input}
             type="text"
@@ -45,7 +45,7 @@ const Register = () => {
           ></input>
         </label>
         <label className={css.form__label}>
-          Пошта
+          Email
           <input
             className={css.form__input}
             type="email"
@@ -55,7 +55,7 @@ const Register = () => {
           ></input>
         </label>
         <label className={css.form__label}>
-          Пароль
+          Password
           <input
             className={css.form__input}
             type="password"
@@ -65,7 +65,7 @@ const Register = () => {
           ></input>
         </label>
         <button type="submit" className={css.register__btn}>
-          Зареєструватися
+          Sign up
         </button>
       </form>
     </div>

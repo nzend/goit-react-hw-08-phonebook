@@ -6,12 +6,14 @@
 }
 
 .phonebookTitle {
+  color: white;
   margin-bottom: 30px;
 }
 .titlePart {
   color: #f84119;
 }
 .contactsTitle {
+  color: white;
   margin-bottom: 30px;
 }
 

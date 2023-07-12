@@ -8,9 +8,9 @@ const UserMenu = () => {
   const name = useSelector(authSelectors.getUserName);
   return (
     <div className={css.user__menu}>
-      <p className={css.user__email}>{name}</p>
+      <p className={css.user__email}>Welcome, {name}</p>
       <button className={css.logout__btn} onClick={() => dispatch(logOut())}>
-        Logout
+        LogOut
       </button>
     </div>
   );

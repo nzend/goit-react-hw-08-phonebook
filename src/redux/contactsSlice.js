@@ -17,34 +17,37 @@ export const contactsSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  extraReducers:  {
-    [fetchContacts.pending]: handlePending,
-    [addContact.pending]: handlePending,
-    [deleteContact.pending]: handlePending,
-
-    [fetchContacts.rejected]: handleRejected,
-    [addContact.rejected]: handleRejected,
-    [deleteContact.rejected]: handleRejected,
-
-    [fetchContacts.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload;
-    },
-    [addContact.fulfilled](state, action) {
-      state.items.push(action.payload);
-      state.isLoading = false;
-      state.error = null;
-    },
-
-    [deleteContact.fulfilled](state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = state.items.filter(
-        contact => contact.id !== action.payload.id
-      );
-    },
-  },
+  extraReducers: builder =>
+    builder
+      .addCase(fetchContacts.pending, (state, action) => handlePending(state))
+      .addCase(addContact.pending, (state, action) => handlePending(state))
+      .addCase(deleteContact.pending, (state, action) => handlePending(state))
+      .addCase(fetchContacts.rejected, (state, action) =>
+        handleRejected(state, action)
+      )
+      .addCase(addContact.rejected, (state, action) =>
+        handleRejected(state, action)
+      )
+      .addCase(deleteContact.rejected, (state, action) =>
+        handleRejected(state, action)
+      )
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(addContact.fulfilled, (state, action) => {
+        state.items.push(action.payload);
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(deleteContact.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = state.items.filter(
+          contact => contact.id !== action.payload.id
+        );
+      }),
 });
 
 export default contactsSlice.reducer;
